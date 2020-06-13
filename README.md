@@ -1,5 +1,6 @@
 # PythonHashingAlgs
 Just some random Hashing Algorithms written in Python. 
+THESE ALGORITHMS ARE FOR STUDY AND SHOWCASE PURPOSES ONLY. PLEASE DO NOT USE THEM IN REAL PRODUCTION ENVIRONMENTS!
 
 # This is not on ITSME because...?
 ITSME is my other project available here:
