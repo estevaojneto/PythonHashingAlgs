@@ -35,10 +35,16 @@ def hash_md5(msg):
     
     # nicely pads our message
     msg_bin += "1"
-    while(len(msg_bin) != 448):
+    while((len(msg_bin)+64) % 512 != 0):
         msg_bin += "0"
     msg_bin += msg_len64
-    print(len(msg_bin))
+    # our message should now have a length multiple of 512 bits;
+    # we'll split it in chunks 512 bits long and operate from there
+    # we'll set up an index which will tell us where to start reading
+    # the next chunk. We'll start at 0, the first position of the first chunk.
+    chunk_index = 0
+    for chunk_no in range(0, math.floor(len(msg_bin)/512)):
+        chunk_index = chunk_index + 512
     
 # HELPER FUNCTIONS
 
@@ -58,4 +64,4 @@ def len_64(len_msg):
 
 # CALL TO hash_md5
 # Now actually call our function and we'll see what happens!
-hash_md5('stu');
+hash_md5('0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF0123456789ABCDEF');
